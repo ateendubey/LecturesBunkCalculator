@@ -13,6 +13,10 @@ document.getElementById('attendanceForm').addEventListener('submit', function(e)
       const percentageBelow90 = 90 - attendancePercentage;
       fine = Math.ceil(percentageBelow90) * 400;
     }
+
+    if(bunkedLectures < 0 ){
+        alert("You cannot Bunk")
+    }
   
     document.getElementById('attendancePercentage').textContent = attendancePercentage.toFixed(2) + '%';
     document.getElementById('bunkedLectures').textContent = bunkedLectures;
