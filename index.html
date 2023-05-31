@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Lecture Bunk Calculator</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Lecture Bunk Calculator</h1>
+    <form id="attendanceForm">
+      <label for="totalLectures">Total Lectures:</label>
+      <input type="number" id="totalLectures" required><br>
+
+      <label for="totalAbsent">Total Absent:</label>
+      <input type="number" id="totalAbsent" required><br>
+
+      <label for="totalDelegation">Total Delegation:</label>
+      <input type="number" id="totalDelegation" required><br>
+
+      <input type="submit" value="Calculate">
+    </form>
+
+    <div id="result" class="hidden">
+      <h2>Attendance Percentage: <span id="attendancePercentage"></span></h2>
+      <h2>Total Lectures You Can Bunk: <span id="bunkedLectures"></span></h2>
+      <h2>Fine: <span id="fine"></span></h2>
+
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
