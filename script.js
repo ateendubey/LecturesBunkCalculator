@@ -6,7 +6,7 @@ document.getElementById('attendanceForm').addEventListener('submit', function(e)
     const totalDelegation = parseInt(document.getElementById('totalDelegation').value);
   
     const attendancePercentage = ((totalLectures - totalAbsent + totalDelegation) / totalLectures) * 100;
-    const bunkedLectures = Math.round(0.1 * totalLectures - totalAbsent + totalDelegation);
+    var bunkedLectures = Math.round(0.1 * totalLectures - totalAbsent + totalDelegation);
   
     let fine = 0;
     if (attendancePercentage < 90) {
@@ -16,6 +16,13 @@ document.getElementById('attendanceForm').addEventListener('submit', function(e)
 
     if(bunkedLectures < 0 ){
         alert("You cannot Bunk")
+        bunkedLectures = -1 * bunkedLectures ;
+        let temp = bunkedLectures
+        bunkedLectures = "Total lectures which do not let you bunk: " + temp ; 
+    }
+    else {
+      let temp = bunkedLectures ; 
+      bunkedLectures = "Total Lectures you can bunk: " + temp ;  
     }
   
     document.getElementById('attendancePercentage').textContent = attendancePercentage.toFixed(2) + '%';
